@@ -1,0 +1,95 @@
+#PHP#
+<?php
+
+$nome = $_GET['nome'];
+$rm = $_GET['rm'];
+$idade = $_GET['idade'];
+$peso = $_GET['peso'];
+$altura = $_GET['altura'];
+
+echo $nome;
+echo "<br>";
+echo $rm;
+echo "<br>";
+echo $idade;
+echo "<br>";
+echo $peso;
+echo "<br>";
+echo $altura;
+echo "<br>";
+
+$calculo1 = $altura * $altura;
+$calculo2 = $peso / $calculo1;
+$imc = number_format($calculo2);
+
+echo "Seu IMC é: $imc" ;
+echo "<br>";
+
+if ($imc < 18.5)
+    echo "Você está abaixo do peso!";
+elseif ($imc <= 24.9)
+    echo "Peso normal.";
+elseif ($imc <=29.9 )
+    echo "Sobrepeso.";
+elseif ($imc <=34.9)
+    echo "Obesidade grau 1.";
+elseif ($imc <= 39.9)
+    echo "Obesidade grau 2.";
+elseif ($imc >= 40)
+    echo "Obesidade grau3.";
+
+echo "<br>";
+
+echo '<a href = "index.html">Voltar<a/>';
+
+
+#HTML#
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Formulário IMC</title>
+</head>
+
+<body>
+
+    <h1>IMC</h1>
+        <form method="GET" action="form.php">
+
+            <label>Nome:</label>
+            <input type="text" name="nome" value="Julyane Pereira Hengler"><br><br>
+
+            <label>RM:</label>
+            <input type="text" name="rm" value="21188"><br><br>
+
+            <label>Idade:</label>
+            <input type="text" name="idade"><br><br>
+
+            <label>Peso:</label>
+            <input type="text" name="peso"><br><br>
+
+            <label>Altura:</label>
+            <input type="text" name="altura"><br><br>
+
+            <input type="submit" value="Calcular">
+            <input type="reset" value="Limpar">
+
+        </form>
+
+</body>
+
+</html>
+
+#CSS#
+body{
+    text-align: center;
+    margin: 100px;
+    margin-bottom: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    background-color: lightcoral;
+}
